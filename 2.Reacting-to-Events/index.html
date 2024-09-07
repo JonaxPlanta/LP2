@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Reacting to Events</title>
+        </head>
+        <body>
+            <script>
+                // This method writes a line inside the HTML code
+                document.write("Hello World!");
+
+                // We can add a code line inside the HTML code using the document title
+                document.write("<h2>" + document.title + "</h2>")
+            </script>
+
+            <!-- We can add a button to trigger a alert on click -->
+            <button type="button" onclick="alert('Welcome!')">Click here!</button>
+
+            <br>
+
+            <!-- We can change content in the HTML code -->
+             <p id="paragraph">Bonjour! Comment ça va?</p>
+             <script>
+                // code for translating
+                function translateFunction() {
+                    const paragraph = document.getElementById("paragraph");
+                    paragraph.innerHTML="Good morning! How are you?";
+                };
+             </script>
+
+             <button type="button" onclick="translateFunction()">Click to translate!</button>
+
+             <br> <br>
+
+            <!-- We can change attributes in the HTML code -->
+            <script>
+                function changeImage() {
+                    let imageType = document.getElementById("myImage");
+
+                    if (imageType.src.match("bulbon")) {
+                        imageType.src = "imgs/pic_bulboff.png";
+                    } else {
+                        imageType.src = "imgs/pic_bulbon.png";
+                    };
+                };
+            </script>
+
+            <img id="myImage" src="imgs/pic_bulbon.png" alt="bulb" width="8%" onclick="changeImage()">
+            <br> <br>
+            <button type="button" onclick="changeImage()">Click Here!</button>
+        </body>
+    </html>
